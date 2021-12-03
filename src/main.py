@@ -3,7 +3,7 @@ from inventory import *
 import json
 
 # read data
-with open('inventory.json', 'r') as myFile:
+with open('src/data/inventory.json', 'r') as myFile:
     data = myFile.read()
 
 inventory = Inventory(json.loads(data))
@@ -53,5 +53,5 @@ while key != 0:
         inventory.resumeValue()
 
 # save data
-with open('inventory.json', 'w', encoding='utf-8') as myFile:
+with open('src/data/inventory.json', 'w', encoding='utf-8') as myFile:
     json.dump(inventory.toJson(), myFile, ensure_ascii=False, indent=4)
